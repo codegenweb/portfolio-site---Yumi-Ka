@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  font-family: "Italiana", sans-serif;
+}
+
+body {
+  background-color: #121926;
+  overflow: hidden;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.head-logo {
+  font-size: 2rem;
+  color: #c0262a;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 20px 100px;
+}
+.head-logo span {
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 20px 100px;
+}
+.nav-items {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: 0.16s;
+  letter-spacing: 1px;
+}
+
+.nav-items:hover {
+  color: #c0262a;
+  text-shadow: 0 0 20px #c0262a;
+}
+nav button {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: 0.16s;
+  letter-spacing: 1px;
+  background-color: #c0262a;
+  height: 40px;
+  width: 200px;
+  border-radius: 50px;
+
+}
+
+nav button:hover {
+  background-color: #9c1e22;
+  letter-spacing: 5px;
+}
+
+.content img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 95%;
+  pointer-events: none;
+}
+.left-content {
+  width: 50%;
+  margin-left: 100px;
+}
+
+.left-content h2 {
+  font-size: 1.8rem;
+  color: #c0262a;
+  letter-spacing: 2px;
+}
+.left-content h2::selection {
+  background-color: #ffffff;
+}
+.left-content h1 {
+  font-size: 8rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: white;
+  padding: 15px 0;
+}
+.left-content h1::selection,
+.left-content p::selection {
+  background-color: #c0262a;
+}
+
+.left-content p {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  color: rgb(206, 206, 206);
+  width: 75%;
+  padding-bottom: 50px;
+}
+.left-content button {
+  font-size: 1.2rem;
+  color: #c0262a;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background-color: transparent;
+  border: 1px solid #c0262a;
+  height: 50px;
+  width: 270px;
+  border-radius: 50px;
+  margin-bottom: 40px;
+  cursor: pointer;
+  transition: 0.16s;
+}
+
+.left-content button:hover {
+  background-color: #c0262a;
+  color: white;
+  letter-spacing: 5px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  height: 90vh;
+}
+
+.social-section {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  padding: 20px 0;
+  transform: translateX(50%);
+}
+
+.social-section i {
+  font-size: 1.1rem;
+  color: #c0262a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 20px;
+  border: 1px solid #c0262a;
+  padding: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.16s;
+}
+.social-section i:hover {
+  transform: rotate(360deg);
+  box-shadow: 0 0 20px #c0262a;
+}
+
+/* Animations */
+@keyframes bottomIn {
+  from {
+    transform: translateY(250px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bottomInImage {
+  from {
+    transform: translateY(250px) scale(0.6);
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.content h2 {
+  animation: bottomIn 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+.content h1 {
+  animation: bottomIn 1.2s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.4s;
+}
+.content p {
+  animation: bottomIn 1.4s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.6s;
+}
+.content button {
+  animation: bottomIn 1.6s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.8s;
+}
+.content img {
+  animation: bottomInImage 1.6s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.8s;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.nav-items,
+.head-logo,
+nav button{
+  animation: zoomIn 1.6s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.6s;
+}
+
+@keyframes bottomInSocial {
+  from {
+    transform: translateY(250px) translateX(50%) scale(0.6);
+  }
+  to {
+    transform: translateY(0) translateX(50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.social-section{
+  animation: bottomInSocial 1.6s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.6s;
+}
